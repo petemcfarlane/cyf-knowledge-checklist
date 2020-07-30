@@ -6,23 +6,5 @@
   "extends": [
     "@codeyourfuture/standard"
   ],
-  "overrides": [
-    {
-      "files": [
-        "setupTests.js",
-        "**/*.test.js"
-      ],
-      "extends": [
-        "plugin:jest/recommended"
-      ],
-      "globals": {
-        "defer": false,
-        "tick": false
-      },
-      "rules": {
-        "jest/expect-expect": "off"
-      }
-    }
-  ],
   "parser": "babel-eslint"
 }
