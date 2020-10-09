@@ -66,8 +66,8 @@
     "@babel/runtime": "^7.10.5",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
-    "mongodb": "^3.6.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.4.1"
   },
   "engines": {
     "node": "^10 || ^12 || ^14"
