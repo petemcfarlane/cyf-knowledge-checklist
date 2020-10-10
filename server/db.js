@@ -3,8 +3,8 @@ const { Pool } = require('pg')
 let pool;
 let config;
 
-if (process.env.POSTGRESDB_URI) {
-  const connectionString = process.env.POSTGRESDB_URI
+if (process.env.DATABASE_URL) {
+  const connectionString = process.env.DATABASE_URL
   config = {
     connectionString: connectionString,
     sslmode: require,
