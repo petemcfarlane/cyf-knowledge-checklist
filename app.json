@@ -1,5 +1,10 @@
 {
   "name": "Starter Kit",
-  "description": "Starter kit for full-stack JavaScript projects"
-  
+  "description": "Starter kit for full-stack JavaScript projects",
+  "env": {
+    "POSTGRESDB_URI": {
+      "description": "Connection URI for your database",
+      "required": true
+    }
+  } 
 }

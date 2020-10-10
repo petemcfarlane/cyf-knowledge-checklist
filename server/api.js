@@ -1,19 +1,17 @@
 
 import { Router } from "express";
 
-import { getClient } from "./db";
+import { Connection } from "./db";
 
 const router = new Router();
 
 router.get("/", (_, res, next) => {
-	const client = getClient();
-
-	client.connect((err) => {
+	
+	Connection.connect((err) => {
 		if (err) {
 			return next(err);
 		}
 		res.json({ message: "Hello, world!" });
-		client.close();
 	});
 });
 
