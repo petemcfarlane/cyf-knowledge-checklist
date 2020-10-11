@@ -9,7 +9,7 @@
  - [x] Linting with [ESLint]
  - [x] Dev mode (watch modes for client and server, proxy to avoid CORS issues)
  - [x] Production build (single deployment artifact, React loaded via CDN)
- - [x] [Heroku] Postgres database
+ - [x] [Heroku Postgres] database
  - [x] [Heroku] deployment
  - [x] [Cloud Foundry] deployment
  - [x] [Docker] build
