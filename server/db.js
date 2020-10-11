@@ -12,7 +12,6 @@ if (process.env.DATABASE_URL) {
       rejectUnauthorized: false
     }
   }
-  
 } else {
   config = {
     host: 'localhost',
