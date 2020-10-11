@@ -3,7 +3,7 @@ const { Pool } = require('pg')
 let pool;
 let config;
 
-if (process.env.DATABASE_URL) {
+if (process.env.DATABASE_URL) { //it's set in Heroku
   const connectionString = process.env.DATABASE_URL
   config = {
     connectionString: connectionString,
@@ -12,7 +12,7 @@ if (process.env.DATABASE_URL) {
       rejectUnauthorized: false
     }
   }
-} else {
+} else { //default local config
   config = {
     host: 'localhost',
     database: 'cyf_hotel',
