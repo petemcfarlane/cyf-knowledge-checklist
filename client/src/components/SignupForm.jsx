@@ -1,1 +1,1 @@
-s
+import 'react';
