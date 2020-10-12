@@ -14,6 +14,7 @@ export function App() {
 	return (
 		<main role="main">
 			<div>
+				<h1>Hello testing testing</h1>
 				<img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
 				<h1 className="message" data-qa="message">{message}</h1>
 			</div>
