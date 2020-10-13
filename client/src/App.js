@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import "./App.css";
 import { getMessage } from "./service";
-import logo from "./logo.svg";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import SignupForm from "./components/SignupForm";
+import LoginForm from "./components/LoginForm";
 
 export function App() {
 	const [message, setMessage] = useState("Loading...");
@@ -12,13 +14,18 @@ export function App() {
 	}, []);
 
 	return (
+		<BrowserRouter>
+		<Switch>
 		<main role="main">
 			<div>
-				<h1>Hello testing testing</h1>
-				<img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
-				<h1 className="message" data-qa="message">{message}</h1>
+			{/* <SignupForm /> */}
+			<Route exact path="/" component={LoginForm} />
+			<Route path="/signup" component={SignupForm} />
+				{/* <LoginForm /> */}
 			</div>
 		</main>
+		</Switch>
+		</BrowserRouter>
 	);
 }
 
