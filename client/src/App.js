@@ -5,6 +5,7 @@ import { getMessage } from "./service";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import SignupForm from "./components/SignupForm";
 import LoginForm from "./components/LoginForm";
+import Skills from "./Pages/Skills";
 
 export function App() {
 	const [message, setMessage] = useState("Loading...");
@@ -22,6 +23,7 @@ export function App() {
 			<Route exact path="/" component={LoginForm} />
 			<Route path="/signup" component={SignupForm} />
 				{/* <LoginForm /> */}
+				<Route path="/skills" component={Skills} />
 			</div>
 		</main>
 		</Switch>

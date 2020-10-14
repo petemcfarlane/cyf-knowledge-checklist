@@ -20,8 +20,8 @@ export default function LoginForm() {
             <input type="email" placeholder="Enter email" name="email" onChange={handleChange} value={input.email} />
             <label>Password</label>
             <input type="password" placeholder="Enter email" name="password" onChange={handleChange} value={input.password} />
+            <Link to = "/Skills">< button type="button" class="btn btn-secondary">Login</button></Link>
             <Link to="/signup">signup</Link>
-          
         </div>
     )
 }
