@@ -1,9 +1,16 @@
 import React from 'react'
-
+import fakeData from '../fakeData.json';
 export default function Node() {
-    return (
+    return(
         <div>
-           <h2>I am Node</h2>  
+          <h2>Node.js</h2> 
+          <ul>
+          {fakeData[4].node.map(( element, index)=>{
+          return(
+          <li key={index}>{element}</li>
+          )  
+          })}
+          </ul>
         </div>
     )
 }
