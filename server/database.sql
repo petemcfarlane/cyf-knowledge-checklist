@@ -9,7 +9,8 @@ CREATE TABLE users
     user_email VARCHAR(255) NOT NULL UNIQUE,
     user_slack VARCHAR(255) ,
     user_password VARCHAR(255) NOT NULl,
-    user_github VARCHAR(255)
+    user_github VARCHAR(255),
+    class_id VARCHAR(255)
 
     PRIMARY KEY(user_id)
 );

@@ -2,41 +2,41 @@
 import pool from '../db';
 const express = require('express');
 const router = express.Router();
+const bcrypt = require("bcrypt");
 
-router.get('/register', async (req, res) => {
-pool.query(
-    'SELECT * from users',
-    (error, result) => {
-      if (error == undefined) {
-        res.json(result.rows);
-      } else {
-        res.json({err: error});
+
+
+  router.post("/register", async (req, res) => {
+    const { firstName, lastName, userRole, userEmail, userSlack, userPassword, userGithub, userClassId } = req.body;
+    try {
+      //destructure req.body
+      const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
+        userEmail
+      ]);
+       if (user.rows.length !== 0) {
+       return res.status(401).json("User already exist!");
       }
+      const saltRound = 10;
+      const salt = await bcrypt.genSalt(saltRound);
+      const bcryptPassword = bcrypt.hash(userPassword,salt);
+
+      const newUser = await pool.query(
+        'INSERT INTO users (first_name, last_name, user_role,user_email,user_slack,user_password,user_github,' +
+        'class_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING * ',
+        [firstName, lastName, userRole, userEmail, userSlack, bcryptPassword, userGithub, userClassId]
+  
+      );
+      res.json(newUser);
     }
-  );
+    
+
+    catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+  
 });
 
-// router.post("/register", async (req, res) => {
-// 	try {
-// 		//1 destructure the request.body
-// 		const { firstName, lastName, userRole, userEmail, userSlack, userPassword, userGithub } = req.body;
-
-
-// 		//2 check if user exist throw error
-
-// 		const user = await pool.query("select * from users where user_email=$1", [userEmail]);
-// 		res.json(user.rows);
-
-// 		//3 enter the user inside the database
-
-// 		//4.generatin jwt our token
-		
-// 	}
-// 	catch (err) {
-// 		console.log(err.message);
-// 		res.status(500).send("server error");
-// 	}
-// })
 
 
 module.exports= router;
