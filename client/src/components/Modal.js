@@ -13,8 +13,20 @@ export default function Modal() {
                  <div className="modal-footer">
                  <Link to="/"><button type="button" className="btn btn-secondary" data-dismiss="modal">Login</button></Link>
                  </div>
+
+               </div>
+             </div>
+             </div>
+
+        </div>
+
+
+
+
+
         </Container>       
       </Jumbotron>       
        
+
     )
 }
