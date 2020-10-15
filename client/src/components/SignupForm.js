@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react';
-import { Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import Modal from './Modal';
 
 
@@ -28,7 +28,7 @@ const SignupForm =() =>{
      function handleSubmit (event){
          event.preventDefault()
         //  console.log(event)
-        // setSubmit(true)
+       setSubmit(true)
         setInput({
             firstName: "",
             surname: "",
@@ -45,10 +45,12 @@ const SignupForm =() =>{
     return ( 
         <div>
            { submit ?
-      
+         
+        // <Route path="/modal" component={Modal} />
+    	// <Route path="/skills" component={Skills} />
         < Modal />
          : 
-         <form onClick={handleSubmit} >
+         <form onSubmit={handleSubmit} >
         <div>
             <label for="firstName">First Name</label>
             <input type="text" placeholder="First name" value={input.firstName} onChange={handleChange} name="firstName" required/>
@@ -69,7 +71,7 @@ const SignupForm =() =>{
             <input type="text" placeholder="Github Name" value={input.githubName} onChange={handleChange}  name="githubName" required/>
             <label for="slackHandler">Slack Handler</label>
             <input type="text" placeholder="Slack Handler" value={input.slackHandler} onChange={handleChange} name="slackHandler" required/>
-           <input type="submit" value="Submit" />
+            <Link to="/modal"><input type="submit" value="Submit" /></Link>
         </div>
         </form>
         }  
