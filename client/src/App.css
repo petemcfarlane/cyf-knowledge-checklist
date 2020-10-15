@@ -1,6 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 body {
     margin: 10vh;
-    
+    font-family: 'Raleway', sans-serif;
   }
 
+  * {
+    box-sizing: border-box;
+  }
 
+.sign-form{
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+input {
+  border-radius: 10%;
+}
+
+button {
+  /* border-radius: 20%; */
+  background-color: #d12f2f;
+}

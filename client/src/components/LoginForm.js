@@ -25,28 +25,11 @@ export default function LoginForm() {
            })
     }
     return (
-
-        //     <form onSubmit={handleSubmit}>
-        // <div>
-        //     <h1>Welcome to our page</h1>
-        //     <label>Email</label>
-        //     <input type="email" placeholder="Enter email" name="email" onChange={handleChange} value={input.email} />
-        //     <label>Password</label>
-        //     <input type="password" placeholder="Enter email" name="password" onChange={handleChange} value={input.password} />
-        //     <input type="submit" value="login" />
-        //     <Link to="/signup">signup</Link>
-        // </div>
-        //  </form>
-
         <Jumbotron fluid>
-<Container>
-
+      <Container>
      <Form onSubmit={handleSubmit}>
-            
-  
-          
           <Col as={Row} sm={{ span: 5, offset: 5 }}>
-            <label  size="lg" controlId="formBasicEmail" >Email</label>
+            <label  size="lg" >Email</label>
             </Col>
           <Col as={Row} sm={{ span: 5, offset: 5 }}>
              <input  
@@ -59,7 +42,7 @@ export default function LoginForm() {
              </Col>
              <br />
             <Col  sm={{ span: 5, offset: 5 }}>
-               <label  size="lg" as={Row} controlId="formHorizontalPassword" >Password</label></Col>
+               <label  size="lg" as={Row} >Password</label></Col>
             <Col as={Row} sm={{ span: 5, offset: 5 }}>
                <input 
                type="password" 
@@ -72,7 +55,7 @@ export default function LoginForm() {
             <Col as={Row} sm={{ span: 5, offset: 5 }}>
               <Link to = "/Skills">< button type="button" variant="secondary" size="lg" p-2 active >Login</button></Link>
               </Col>
-            <Col as={Row} sm={{ span: 5, offset: 5 }}>
+              <Col as={Row} sm={{ span: 5, offset: 5 }}>
                <Link to="/signup">signup</Link> 
                </Col>
         </Form>    
