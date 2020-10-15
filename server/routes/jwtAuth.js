@@ -3,6 +3,8 @@ import pool from '../db';
 const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const jwtGenerator = require('../utils/jwtGenerator');
+
 
 
  
@@ -25,7 +27,8 @@ const bcrypt = require("bcrypt");
         ' VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) returning *' ,
         [firstName, lastName, userRole, userEmail, userSlack, bcryptPassword, userGithub, userClassId, username, userPhone, cyfCity, userDateOfBirth]
         );
-      res.json(newUser);
+     const token = jwtGenerator(newUser.rows[0].user_id);
+      res.json(token);
     }
     
 
