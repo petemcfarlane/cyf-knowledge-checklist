@@ -26,7 +26,7 @@ export default function LoginForm() {
     }
     return (
         <Jumbotron fluid>
-      <Container>
+      <Container className='login-page'>
      <Form onSubmit={handleSubmit}>
           <Col as={Row} sm={{ span: 5, offset: 5 }}>
             <label  size="lg" >Email</label>
