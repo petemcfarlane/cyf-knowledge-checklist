@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "./App.css";
+
 import { getMessage } from "./service";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import SignupForm from "./components/SignupForm";
