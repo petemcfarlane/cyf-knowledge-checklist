@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import Modal from './Modal';
@@ -77,4 +78,5 @@ const SignupForm =() =>{
 }
 
 
-export default  SignupForm
+
+export default  SignupForm;

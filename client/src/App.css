@@ -1,11 +1,6 @@
-.logo {
-    width: 100px;
-}
+body {
+    margin: 10vh;
+    
+  }
 
-.message {
-    color: blue;
-}
 
-.message:hover {
-    background-color: yellow;
-}
