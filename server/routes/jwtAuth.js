@@ -5,6 +5,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwtGenerator = require('../utils/jwtGenerator');
 const validInfo = require("../middleware/validInfo");
+const authorization = require('../middleware/authorization');
 
 
 
@@ -55,63 +56,23 @@ const validInfo = require("../middleware/validInfo");
                  return res.status(401).json("password or emil is incorrect");
                }
                const token = jwtGenerator(user.rows[0].user_id);
-               res.json({ token });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-               
-       
-        
+               res.json({ token })  
       }
         catch (err) {
         console.error(err.message);
         res.status(500).send("server error");
         
       }
-    })
+           })
+    
+  router.get("/verify", authorization, async (req, res) => {
+  try {
+    res.json(true);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
   
 
 
